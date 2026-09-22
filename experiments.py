@@ -59,7 +59,7 @@ def run_single_config(dataset, strength, temperature, use_projection_head,
 
     if plot:
         plot_embeddings_2d(test_emb, test_labels, method="pca",
-                            title=f"{run_name} (PCA)", save_path=f"outputs/{run_name}_pca.png")
+                            title=f"{run_name} (PCA)")
 
     result = {
         "config": {
@@ -121,10 +121,7 @@ def run_all_experiments(dataset="cifar10", subset_size=5000, epochs=10):
     all_results.update(experiment_augmentation(dataset, subset_size, epochs))
     all_results.update(experiment_projection_head(dataset, subset_size, epochs))
 
-    # Strip the raw loss_curve list out of the summary table for a compact printout,
-    # but keep it in the JSON dump.
-    with open("outputs/experiment_results.json", "w") as f:
-        json.dump(all_results, f, indent=2)
+   
 
     print("\n\n==== SUMMARY ====")
     for name, r in all_results.items():
