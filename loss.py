@@ -1,5 +1,5 @@
 """
-loss.py
+
 -------
 InfoNCE loss using in-batch negatives 
 
