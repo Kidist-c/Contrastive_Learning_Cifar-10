@@ -1,7 +1,7 @@
 """
-
+evaluate.py
 -----------
-Representation-quality evaluation:
+Representation-quality evaluation (paper section 10):
 
     - extract_embeddings         : run the encoder (h, NOT the projection head z)
                                     over a dataset and collect (embeddings, labels)
@@ -168,4 +168,4 @@ def plot_embeddings_2d(embeddings, labels, method="tsne", title="Embedding space
     if save_path:
         plt.savefig(save_path, dpi=150, bbox_inches="tight")
         print(f"Saved plot to {save_path}")
-    plt.close()
+    plt.show()
